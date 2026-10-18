@@ -1,10 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import connectDB from "./db/db.js";
 dotenv.config(); 
 
 const app = express();
-
+connectDB();
 app.use(cors({
   origin: process.env.CORS_ORIGIN, // e.g. http://localhost:3000
   methods: ["GET", "POST", "PUT", "DELETE"],
